@@ -1,0 +1,23 @@
+
+
+
+
+
+<p>Componenete libros listo! </p>
+
+<ul>
+    <li *ngFor="let libro of libros">
+   <a (click)="agregarLibro(libro)" [routerLink] ="['/informacion',libro.id]">  {{libro.titulo}}</a>
+    </li>                                 <!--solo escribe los titulos-->
+</ul>
+
+<div *ngIf ="errorHttp"> 
+    <p>Direccion erronea</p>
+    <div *ngIf="cargando" class="loader"></div>
+</div>
+
+<!--sale aniamcion cargando-->
+<div *ngIf="cargando" class="container">
+    <div class="loader"></div>
+    <p >Por favor espere...</p>
+</div>

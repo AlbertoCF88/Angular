@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+
+
+
+
+<p>
+    <a  class="button"  href="">INICIO</a><!--se carga todo la pagina-->
+        <!-- routerLinkActive sirve para hace runa clase y cambie algo cuando le des-->
+     <a class="button"  [routerLink]="['/listado-libros']" routerLinkActive="unaclase">Listado libros</a><!--solo carga esa parte-->
+     <a class="button"  [routerLink]="['renderer2']" >Render</a>
+ </p>
+
+
+
+
+<div class="container">
+    <ul *ngIf ="librosVistos.verListado()"><!--ver listado en servicio-->
+        <h2>Libros vistos:</h2>
+    <!--si pude ver el listado mira le listado-->
+         <li *ngFor="let libro of librosVistos.verListado()"> Visto - {{libros}}</li>
+    <!--recorre la lista para mostrar libros vistos-->
+
+    </ul>
+</div>
+

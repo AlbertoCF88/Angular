@@ -1,0 +1,59 @@
+/* li{
+    cursor: pointer
+
+} */
+/*
+.miClase{
+    animation: animacion 1s ease-in-out  2 alternate forwards;
+}/*
+
+/*
+@keyframes animacion{
+     0%{            
+           background-color: yellow;
+           border-radius: 0%;
+           top:0%;
+           left:0%;
+       }               
+        
+       25%{
+           background-color:red;
+           top:0;
+           left:90%;
+       }
+   
+       33%{
+          background-color:green; 
+       }
+   
+       50%{
+           top:80%;
+           left: 90%;
+        }
+       
+       75%{
+          background-color:black; 
+          top:80%;
+           left:0%;
+       }
+   100% {           
+           background-color: violet;
+           border-radius: 50%;
+           top:0%;
+           left:0%;
+       }            
+   }*/
+
+/*es lo mismo que lo de arriba*/
+   li{
+    cursor: pointer;
+    transition: 0.3s all;
+}
+   .miClase{
+    background-color: blue;
+    padding: 10px;
+    color: white;
+} 
+li[data-select = "true"]:not(.miClase){/*si li no tiene clase puesta entonces ponle un fondo rosa*/
+    background-color: rgb(207, 169, 207);
+}
