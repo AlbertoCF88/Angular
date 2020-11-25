@@ -1,4 +1,19 @@
+
+
+
+    <div class= "float-sm-right" > 
+        <h6>Carrito de la compra</h6>
+     <ul class="list-group">
+         <li *ngFor="let  VarItem of boughtItems"  class="list-group-item">
+              {{VarItem.title}}
+          </li>
+     </ul>
+    </div>
+
+
 <main class="container" role="main">
+  
+   
     <div class="starter-template">
         <h1>Stateful</h1>
         <p class="lead"> Ejemplo de componente stateful </p>
@@ -7,22 +22,21 @@
             <li class="list-group-item" *ngFor ="let VarCurso of shopModel.shopItems"> <!--shopModel staful.ts y ese accede al shopItems dentro de shop.model.ts-->
                 {{VarCurso.title}}
             </li>
-
         </ul>
     </div>
         
-   
+  
         <div class="starter-template">
              <h1>Stateful</h1>
                 <p>Ahora lo mismo pero en vez de una lista en forma de carta</p>
-            <div class="card-deck">
+                <div class="card-deck">
                 <div class="card" *ngFor="let curso of shopModel.shopItems">
                     <img class="card-img-top" src="{{curso.picture}} "alt="{{curso.title}}">
                      <div class="card-body">
                          <h5 class="card-title">{{curso.title}}</h5>
                          <p class="card-text">{{curso.desc}}</p>
                          <p class="card-text">Precio: {{curso.price}}€</p>
-                         <a href="#" class="btn btn-primary">Comprar</a>
+                         <a href="#" class="btn btn-primary" (click)="clickItem(curso)">Comprar</a> <!--creamos le metodo clickItem para luego definirlo en la hoja de la logica y entre() quiero que ente todo el objeto-->
                     </div>
                  </div>
              </div>

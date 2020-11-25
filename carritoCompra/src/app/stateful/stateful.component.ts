@@ -15,10 +15,14 @@ boughtItems: Array<Product>; // array de los productos que viene de la importaci
 
 
   constructor() { 
+    this.boughtItems=[];
    
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
+
+    clickItem(_curso){//click en compra el html
+    this.boughtItems.push(_curso);//meteme el contenido del curso en otro sitio definido en el html
+    }
 
 }
