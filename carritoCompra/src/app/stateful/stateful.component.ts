@@ -11,7 +11,7 @@ import { Shop } from '../models/shop.model';
 export class StatefulComponent implements OnInit {
 
 shopModel: Shop = new Shop();// llama a la importacion de shop en una variable
-boughtItems: Array<Product>; // array de los productos que vienen de la importacion de products
+boughtItems: Array<Product>; // array de los productos que viene de la importacion de products
 
 
   constructor() { 

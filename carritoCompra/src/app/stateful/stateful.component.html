@@ -1,28 +1,30 @@
 <main class="container" role="main">
     <div class="starter-template">
-        <h1>Sateful</h1>
+        <h1>Stateful</h1>
         <p class="lead"> Ejemplo de componente stateful </p>
         
          <ul class="list-group">
-            <li class="list-group-item" *ngFor ="let curso of shopModel.shopItems"> <!--shopModel staful.ts y ese accede al shopItems dentro de shop.model.ts-->
-                {{curso.title}}
+            <li class="list-group-item" *ngFor ="let VarCurso of shopModel.shopItems"> <!--shopModel staful.ts y ese accede al shopItems dentro de shop.model.ts-->
+                {{VarCurso.title}}
             </li>
 
         </ul>
     </div>
-        <!-- <div class="card-deck">
-            <div class="card" *ngFor='let curso of shopModel.shopitems'>
-                <img src="{{curso.picture}}" alt="" class="{{curso.title}}">
-                <div class="card-body">
-                    <h5 class="card-title">{{curso.title}}</h5>
-                    <p class="card-text">{{curso.desc}}</p>
-                    <p class="card-text">Precio: {{curso.price}}€</p>
-                   <a href="#" class="btn btn-primary">Comprar</a>
-                </div>
-            </div>
-        </div> -->
+        
    
-   
-
-</main>
-
+        <div class="starter-template">
+             <h1>Stateful</h1>
+                <p>Ahora lo mismo pero en vez de una lista en forma de carta</p>
+            <div class="card-deck">
+                <div class="card" *ngFor="let curso of shopModel.shopItems">
+                    <img class="card-img-top" src="{{curso.picture}} "alt="{{curso.title}}">
+                     <div class="card-body">
+                         <h5 class="card-title">{{curso.title}}</h5>
+                         <p class="card-text">{{curso.desc}}</p>
+                         <p class="card-text">Precio: {{curso.price}}€</p>
+                         <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                 </div>
+             </div>
+        </div>
+ </main>
