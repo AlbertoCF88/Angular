@@ -14,10 +14,20 @@ h6{
 .list-group-item {
   position: relative;
   display: block;
-  padding: 2px 19px;
+  padding: 1px 6px;
   background-color:transparent;
   border:0px;
 }
 svg{
   margin-right: 5px;
+}
+#boton{
+  margin-right: 9px;
+  width: 23px;
+  height: auto;
+  cursor: pointer;
+}
+#boton:hover{
+  background-color: brown;
+  border-radius: 30px;
 }

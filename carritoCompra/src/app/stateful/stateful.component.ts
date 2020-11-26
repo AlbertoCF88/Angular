@@ -24,5 +24,8 @@ boughtItems: Array<Product>; // array de los productos que viene de la importaci
     clickItem(_curso){//click en compra el html
     this.boughtItems.push(_curso);//meteme el contenido del curso en otro sitio definido en el html
     }
+    eliminarCarro(){//click en compra el html
+      alert("eliminado");//
+      }
 
 }
