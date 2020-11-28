@@ -36,6 +36,3 @@ export class StatefulComponent implements OnInit {
  }
 }
 }
-   //eliminarCarro(){
-     // alert("eliminado");
-    //  }

@@ -1,4 +1,3 @@
-  
 import { Shop.Model } from './shop.model';
 
 describe('Shop.Model', () => {

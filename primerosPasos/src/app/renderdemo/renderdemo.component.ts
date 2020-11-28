@@ -13,6 +13,8 @@ nuevoElemento: any;
 nuevoBoton: any;
   nuevoBoto: any;
 
+public matricula:string;
+private disable: boolean;
 constructor(private ren: Renderer2) { 
   this.alumnos = [
     {nombre: "David", id: 1},
