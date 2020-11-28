@@ -7,19 +7,19 @@ export class Shop {
     this.shopItems = [
       {
       title: 'Curso Wordpress',
-      desc: 'Aprende Wordpress desde 0 con David Piqué',
+      desc: 'Aprende desarrollo Wordpress desde el principio ',
       picture: 'assets/IMG/wordpress.jpg',
       price: 164
       },
       {
       title: 'Curso Frontend',
-      desc: 'Aprende desarrollo front end desde 0 con David Piqué',
+      desc: 'Aprende desarrollo front end desde el principio',
       picture: 'assets/IMG/frontend.jpg',
       price: 220
       },
       {
       title: 'Curso Fullstack',
-      desc: 'Aprende desarrollo frontend y backend desde 0 con David Piqué',
+      desc: 'Aprende desarrollo frontend y backend desde el principio',
       picture: 'assets/IMG/fullstack.jpg',
       price: 420
       }
