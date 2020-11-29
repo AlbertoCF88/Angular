@@ -9,8 +9,8 @@ import { Product } from '../interface/product';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StatelessComponent implements OnInit {
-  @Input() product: Product;//usar algo de otra hoja
-  @Output() cursomatriculado: EventEmitter<Product> = new EventEmitter();//out envia algo a otra hoja, mediente un evento
+  @Input() product: Product;//usar algo producto de la hota html stataless
+  @Output() cursomatriculado: EventEmitter<Product> = new EventEmitter();//evento que recogene componenete padre stateful
 
   //lo de public o private para opcional
   public matricula: string;//es como una variable global para que puede ser llamado por otra hoja or el ejemplo por la hoja html

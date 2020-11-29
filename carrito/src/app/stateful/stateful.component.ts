@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { ConfirmComponent } from '../confirm/confirm.component';
 import { Product } from '../interface/product';
 import { Shop } from '../models/shop.model';
 
@@ -8,6 +9,8 @@ import { Shop } from '../models/shop.model';
  styleUrls: ['./stateful.component.css']
 })
 export class StatefulComponent implements OnInit {
+
+@ViewChild(ConfirmComponent, {static: false}) confirmchild:ConfirmComponent;
 
  shopModel: Shop = new Shop();
  boughtItems: Array<Product>;
@@ -20,10 +23,11 @@ export class StatefulComponent implements OnInit {
  }
 
  clickItem(_curso: Product) {
-   this.boughtItems.push(_curso);
+   this.boughtItems.push(_curso);//al clicar mete el curso ene l carritod e la compra
  }
  cursoMatriculado(_event: Product){
    this.clickItem(_event);//viene del html y a suvez del stateless
+   this.confirmchild.isDisabled=false; //controlar el boton de confirm sin pasar por la vista
  }
 
 //https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce
