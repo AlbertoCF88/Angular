@@ -1,26 +1,48 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit,ViewChild, OnDestroy } from '@angular/core';
 import { ConfirmComponent } from '../confirm/confirm.component';
 import { Product } from '../interface/product';
 import { Shop } from '../models/shop.model';
+
+import { HttpClient, HttpResponse } from '@angular/common/http';
+//importar tambien en app.module
+import { Subscription } from 'rxjs';
+//Subscription para manejar (assets)curos.jason como un objeto y sea mas facil de llamar
+//ahora los cursos van a ser llamdos desde un http externo
+
 
 @Component({
  selector: 'app-stateful',
  templateUrl: './stateful.component.html',
  styleUrls: ['./stateful.component.css']
 })
-export class StatefulComponent implements OnInit {
+export class StatefulComponent implements OnInit, OnDestroy {//clase integrada con onInit y onDestroy
 
 @ViewChild(ConfirmComponent, {static: false}) confirmchild:ConfirmComponent;
 
- shopModel: Shop = new Shop();
- boughtItems: Array<Product>;
+//  shopModel: Shop = new Shop();
+  errorHttp:boolean;
+  shopModel:any;
+  boughtItems: Array<Product>;
 
- constructor() {
+  private shopSubscription: Subscription; //private de forma loca/shopSubcription viene referenciada de import Subcription  
+
+ constructor(private http: HttpClient) {
    this.boughtItems = [];
+   this.shopModel ={shopItems: []};
+   //ahora los cursos sale de assets cursos.jason y no de models shop.models
   }
 
- ngOnInit(): void {
- }
+  ngOnInit(): void {
+    this.shopSubscription = this.http.get('assets/cursos.json').subscribe(
+      (respuesta: Response) => { this.shopModel.shopItems  = respuesta; },
+      (respuesta: Response) => { this.errorHttp  = true; }
+    );
+   }
+   ngOnDestroy(): void {
+    this.shopSubscription.unsubscribe();//me desuscribo de shopSbcrption para mejorar rendimiento
+  }
+
+
 
  clickItem(_curso: Product) {
    this.boughtItems.push(_curso);//al clicar mete el curso ene l carritod e la compra

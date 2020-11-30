@@ -6,22 +6,22 @@ export class Shop {
    constructor() {
     this.shopItems = [
       {
-      title: 'Curso Wordpress',
-      desc: 'Aprende desarrollo Wordpress desde el principio ',
-      picture: 'assets/IMG/wordpress.jpg',
-      price: 164
+      title: 'no afecta',
+      desc: 'no afecta ',
+      picture: 'no afecta',
+      price: 0
       },
       {
-      title: 'Curso Frontend',
-      desc: 'Aprende desarrollo front end desde el principio',
-      picture: 'assets/IMG/frontend.jpg',
-      price: 220
+      title: 'no afecta',
+      desc: 'no afecta',
+      picture: 'no afecta',
+      price:0
       },
       {
-      title: 'Curso Fullstack',
-      desc: 'Aprende desarrollo frontend y backend desde el principio',
-      picture: 'assets/IMG/fullstack.jpg',
-      price: 420
+      title: 'no afecta',
+      desc: 'no afecta',
+      picture: 'no afecta',
+      price: 0
       }
     ];
    }
