@@ -2,7 +2,15 @@
 
     <div class="starter-template">
       <h1>Stateful</h1>
-      <p class="lead">Ejemplo de componete stateful.</p>
+     <ul>
+      <li> <p class="lead">Input padre comunican al hijo (input al hijo)</p> 
+            <!-- <pre>En el hijo ->.Ts importar input, y en export class -> @Input() nombre: number ; y en html {{nombre}}.
+                En el padre en la hoja html -> <app-hijo [nombre imput hijo]="metodo() o variable padre"></app-hijo>
+            </pre> -->
+      </li>
+      <li> <p class="lead">Output hijos comunican a los padres (output al padre)</p></li>
+    </ul>
+      
 
 
       <div class="card-deck">
@@ -21,6 +29,6 @@
           <li class="list-group-item disabled"><h2>Total: {{finalPrice() | currency:"&euro;"}}</h2>
           </li>
           </ul>
-          <app-confirm></app-confirm>
+          <app-confirm [finalPrice]="finalPrice()"></app-confirm>
 <!--<app-confirm></app-confirm>-->
   </main><!-- /.container -->

@@ -1,12 +1,12 @@
 import { ChangeDetection } from '@angular/cli/lib/config/schema';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../interface/product';
-
+//ChangeDetectionStrategy -> mejorar rendimiento 
 @Component({
   selector: 'app-stateless',
   templateUrl: './stateless.component.html',
   styleUrls: ['./stateless.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush//onPush -> para una mejor eficacia interna de los cambios que produce los botones
 })
 export class StatelessComponent implements OnInit {
   @Input() product: Product;//usar algo producto de la hota html stataless

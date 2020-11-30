@@ -10,17 +10,18 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Confirmaciónde matriculación</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Carrito de la compra</h5>
                 <button (click)="showModal = false" type="button" class="close" data-dismiss="modal"aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-               Poner precio final
+              Precio final {{finalPrice}}€ 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Confirmar</button>
+                <button (click)="showModal = false" type="button" class="btn btn-secondary"data-dismiss="modal">Cancelar</button>
+           
+         <button (click)="showModal = false;comprado()" type="button" class="btn btn-primary">Confirmar</button>
             </div>
         </div>
     </div>
