@@ -32,4 +32,10 @@ export class StatelessComponent implements OnInit {
     return !!this.disable;//desabilita el boton para que solo puedas darle una vez
   }
 
+mensaje(){
+  alert('¿Te vas a descargar la imagen?');
+}
+
+
+
 }
