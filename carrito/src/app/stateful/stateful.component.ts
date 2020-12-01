@@ -49,8 +49,9 @@ export class StatefulComponent implements OnInit, OnDestroy {//clase integrada c
  }
  cursoMatriculado(_event: Product){
    this.clickItem(_event);//viene del html y a suvez del stateless
+   this.onConfirm(); //muestra alert de metodo onconfimr mas abajo 
    this.confirmchild.isDisabled=false; //controlar el boton de confirm sin pasar por la vista
- }
+  }
 
 //https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce
  //el método reduce() ejecuta una función reductora sobre cada elemento de un array, devolviendo como resultado un único valor.
@@ -65,6 +66,11 @@ El valor devuelto de la función reductora se asigna al acumulador, cuyo valor s
 
 Sintaxis
 arr.reduce(callback(acumulador, valorActual[, índice[, array]])[, valorInicial])*/
+
+onConfirm() {
+  alert('Has añadido un nuevo curso');
+  }
+
 
  finalPrice() {
    if (this.boughtItems) {//array con todos los elementos esto se ejecuta solo si this.boughtItems tiene algo que mostar

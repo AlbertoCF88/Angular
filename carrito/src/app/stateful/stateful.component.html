@@ -30,5 +30,6 @@
           </li>
           </ul>
           <app-confirm [finalPrice]="finalPrice()"></app-confirm>
-<!--<app-confirm></app-confirm>-->
-  </main><!-- /.container -->
+          <app-status-cart [price]="finalPrice()" [shopModel]="shopModel.shopItems" (add)="onConfirm()"> </app-status-cart>
+  
+        </main><!-- /.container -->
