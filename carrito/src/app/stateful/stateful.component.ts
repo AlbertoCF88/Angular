@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit,ViewChild, OnDestroy, Renderer2, ElementRef } from '@angular/core';
 import { ConfirmComponent } from '../confirm/confirm.component';
 import { Product } from '../interface/product';
 import { Shop } from '../models/shop.model';
@@ -6,6 +6,7 @@ import { Shop } from '../models/shop.model';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 //importar tambien en app.module
 import { Subscription } from 'rxjs';
+import { style } from '@angular/animations';
 //Subscription para manejar (assets)curos.jason como un objeto y sea mas facil de llamar
 //ahora los cursos van a ser llamdos desde un http externo
 
@@ -18,6 +19,7 @@ import { Subscription } from 'rxjs';
 export class StatefulComponent implements OnInit, OnDestroy {//clase integrada con onInit y onDestroy
 
 @ViewChild(ConfirmComponent, {static: false}) confirmchild:ConfirmComponent;
+@ViewChild ("CambioColor") CambioColor: ElementRef;
 
 //  shopModel: Shop = new Shop();
   errorHttp:boolean;
@@ -26,7 +28,7 @@ export class StatefulComponent implements OnInit, OnDestroy {//clase integrada c
 
   private shopSubscription: Subscription; //private de forma loca/shopSubcription viene referenciada de import Subcription  
 
- constructor(private http: HttpClient) {
+ constructor(private http: HttpClient, private ren: Renderer2) {
    this.boughtItems = [];
    this.shopModel ={shopItems: []};
    //ahora los cursos sale de assets cursos.jason y no de models shop.models
@@ -37,9 +39,13 @@ export class StatefulComponent implements OnInit, OnDestroy {//clase integrada c
       (respuesta: Response) => { this.shopModel.shopItems  = respuesta; },
       (respuesta: Response) => { this.errorHttp  = true; }
     );
+
+      this.onGlobalKeyboard();
+
    }
    ngOnDestroy(): void {
     this.shopSubscription.unsubscribe();//me desuscribo de shopSbcrption para mejorar rendimiento
+    document.removeEventListener('click', this.onGlobalKeyboard)
   }
 
 
@@ -89,6 +95,10 @@ onKeyboard(_event){
   }
 }
 
+onGlobalKeyboard() {
+  document.addEventListener('click', (eventoGlobal) => {
+  console.log("hola, estas clicando por ahi")
 
-
+  });
+  }
 }
