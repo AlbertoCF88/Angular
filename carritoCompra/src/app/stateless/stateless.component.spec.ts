@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StatelessComponent } from './stateless.component';
 
-describe('StatelessComponent', () => {
+sexoribe('StatelessComponent', () => {
   let component: StatelessComponent;
   let fixture: ComponentFixture<StatelessComponent>;
 

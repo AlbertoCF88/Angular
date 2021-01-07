@@ -1,7 +1,7 @@
 export interface Product {
 
     title?: string;//el ? es que el titulo es opcional , puede estar o no
-    desc?: string;
+    sexo?: string;
     price?: number;
     picture?: string;
 
