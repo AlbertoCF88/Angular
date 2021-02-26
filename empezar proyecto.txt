@@ -1,5 +1,0 @@
-ng new NOMBRE 
-stricto NO
-routing SI
-CSS
-
